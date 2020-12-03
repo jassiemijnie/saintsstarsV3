@@ -5,6 +5,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Titillium Web', sans-serif;
     color: #333;
@@ -17,14 +18,14 @@ body {
 h1, h2, h3 {
     font-weight: 300;
     line-height: 1.2;
-    padding: 0 5em;
+    padding: 0;
     text-transform: uppercase;
 }
 
 p {
     text-align: center;
-    padding: 0 5em;
-    max-width: 700px;
+    padding: 0;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -44,16 +45,22 @@ video {
 
 /* Header */
 
+header video {
+    background-color: black;
+    height: 100vh;
+}
+
 header div{
 position: absolute;
 width: 100vw;
-padding: 1em;
+margin-top: 10%;
 }
 
 header img {
     margin-top: 9%;
     text-align:center;
     width: 40%;
+    max-width: 300px;
 }
 
 header h1 {
@@ -65,17 +72,15 @@ header p,h1 {
     color:white;
 }
 
-
-
-
 /* CTA */
 
 .button1 {
-    background-color: cornflowerblue;
+    background-color: #2031D5;
     border-radius: 1em;
     width: 10em;
-    margin: auto; padding: .15em;
+    margin: auto; padding: .25em;
     margin-top: 6%;
+    font-size: .8em;
 }
 
 header p {
@@ -84,17 +89,12 @@ header p {
     font-weight: 500;
 }
 
-header video {
-    background-color: black;
-}
-
 /* Container 1 - First timer en Amsterdam oud-zuid, gepositioneerd in web browser */
 
 
 #container1 h3:first-of-type {
     font-weight: 600;
     font-size: 1em;
-    text-align: center;
 }
 
 
@@ -120,7 +120,9 @@ header video {
     background-size: cover;
     background-position: center center;
     color: white;
-    opacity: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 #container1 .right {
@@ -130,34 +132,48 @@ header video {
     background-size: cover;
     background-position: center center;
     color: white;
-    opacity: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
+/* Container 1 - teksten positioneren */
 
 #container1 .left h3 {
-    position: absolute;
-    top: 11.5rem;
-    left: 15%;
+    margin: 0; padding: 0;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-shadow: black 1px 0 10px;
 }
 
 #container1 .right h3 {
-    position: absolute;
-    top: 11.5rem;
-    right: 15%;
+    margin: 0; padding: 0;
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-shadow: black 1px 0 10px;
 }
 
 #container1 .left p, a {
     display: none;
+    margin: 0; padding: 0;
+    font-size: .8em;
+    grid-column-start: 2;
+    grid-row-start: 4;
+
 }
 
 #container1 .right p, a {
     display: none;
+    margin: 0; padding: 0;
+    font-size: .8em;
+    grid-column-start: 2;
+    grid-row-start: 4;
 }
 
 /* Tribe + button */
 
 .button2 {
-    background-color: cornflowerblue;
+    background-color: #2031D5;
     border-radius: .1em;
     width: 10em;
     margin: auto; padding: .5em;
@@ -169,7 +185,7 @@ header video {
     margin-top: 5%;
 }
 
-/* Our concept */
+/* Our concepts */
 
 #concept {
     margin-top: 7%;
@@ -191,7 +207,7 @@ header video {
 
 #container2 div {
     position: relative;
-    width: 33%;
+    width: 33.33333%;
     height: 100%;
     overflow: hidden;
 }
@@ -200,23 +216,43 @@ header video {
     background-image: url(images/holybooty.png);
     background-size: cover;
     background-position: center center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 #container2 .img2 {
     background-image: url(images/gym3.jpg);
     background-size: cover;
     background-position: center center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 #container2 .img3 {
     background-image: url(images/gym2.jpg);
     background-size: cover;
     background-position: center center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* Het lukt me niet om de H3 aan de onderkant van de container te krijgen */
-#container2 h3 {
-    align-items: baseline;
+#container2 .img1 h3 {
+    grid-column-start: 1;
+    grid-row-start: 6;
+}
+
+#container2 .img2 h3 {
+    grid-column-start: 1;
+    grid-row-start: 6;
+}
+
+#container2 .img3 h3 {
+    grid-column-start: 1;
+    grid-row-start: 6;
 }
 
 /* Container 3 - afbeelding met tekst */
@@ -231,21 +267,61 @@ header video {
     background-image: url(images/gym1.jpg);
     background-size: cover;
     background-position: center center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 3em;
 }
 
 #container3 h2 {
     margin: 0; padding: 0;
-    padding-left: .5em;
     font-size: 3em;
+    padding-left: 15px;
     text-align: left;
+    grid-row-start: 2;
 }
 
 #container3 h3 {
     max-width: 20em;
     margin: 0; padding: 0;
-    padding-left: 1.4em;
+    padding-left: 15px;
     text-align: left;
-
+    grid-row-start: 4;
 }
 
+#container3 .button3 {
+    grid-row-start: 6;
+    background-color: #2031D5;
+    border-radius: .1em;
+    width: 10em;
+    margin: 0 -30px; padding: .5em;
+    margin-top: 6%;
+    color: white;
+    text-align: center;
+}
 
+/* Footer */
+
+footer { 
+    background-color: #F1F1F1;
+    padding: 3em;
+}
+
+footer li {
+    list-style: none;
+    padding: 0 10px;
+    font-size: .8em;
+}
+
+footer ul {
+    margin: 0; padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    font-size: .6em;
+    padding: 3em;
+    color: grey;
+}
